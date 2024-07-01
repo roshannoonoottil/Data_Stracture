@@ -20,7 +20,7 @@ push(value){
         newNode.next = this.top
         this.top = newNode
     }
-    this.length ++
+    // this.length ++
     return this
 }
 pop(){
@@ -38,6 +38,8 @@ let newStack = new stack(1)
 newStack.push(3)
 // newStack.pop()
 // newStack.pop()
-// newStack.push(4)
+ newStack.push(4)
+
+
 
 console.log(newStack);

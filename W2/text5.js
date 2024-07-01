@@ -34,32 +34,54 @@
 // console.log(mergeSort([8,9,6,7,5,3,4,1,2]));
 
 
-class Node{
-    constructor(value){
-        this.value = value;
-        this.next = null;
-    }
-}
-class Stack{
-    constructor(value){
-        const newNode = new Node(value)
-        this.top = newNode
-        this.length = 1
-    }
+// class Node{
+//     constructor(value){
+//         this.value = value;
+//         this.next = null;
+//     }
+// }
+// class Stack{
+//     constructor(value){
+//         const newNode = new Node(value)
+//         this.top = newNode
+//         this.length = 1
+//     }
 
-}
+// }
 
-function bubbleSort(array){
-    for(let i =array.length -1; i >0 ;i++){
-        for(let j =0;j<i;j++){
-            if(array[j]>array[j+1]){
-                let temp =array[j]
-                array[j] =array[j+1]
-                array[j+1] =temp
-            }
-        }
+// function bubbleSort(array){
+//     for(let i =array.length -1; i >0 ;i++){
+//         for(let j =0;j<i;j++){
+//             if(array[j]>array[j+1]){
+//                 let temp =array[j]
+//                 array[j] =array[j+1]
+//                 array[j+1] =temp
+//             }
+//         }
+//     }
+//     return array
+// }
+
+// console.log(bubbleSort([8,9,6,7,4,5,3,1,2]));
+
+
+function reverseStringUsingStack(s) {
+    let stack = [];
+    
+    // Push all characters of the string to the stack
+    for (let char of s) {
+        stack.push(char);
     }
-    return array
+    
+    // Pop all characters from the stack and form the reversed string
+    let reversedString = '';
+    while (stack.length > 0) {
+        reversedString += stack.pop();
+    }
+    
+    return reversedString;
 }
 
-console.log(bubbleSort([8,9,6,7,4,5,3,1,2]));
+// Example usage
+let reversedString = reverseStringUsingStack("hello");
+console.log("Reversed String:", reversedString);
