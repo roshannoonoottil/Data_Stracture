@@ -135,4 +135,5 @@ class HashTable {
 let myHashTable = new HashTable()
 myHashTable.set('bolts', 1400)
 myHashTable.set('washers', 50)
+console.log(myHashTable.get('washers'));
 console.log(myHashTable);

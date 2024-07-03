@@ -3,16 +3,10 @@ function stringReverseUsingStack(str){
     for(let char of str){
         stack.push(char)
     }
-    let rev = '';
+    let reverse = '';
     while(stack.length > 0){
-        rev += stack.pop()
+        reverse += stack.pop()
     }
-    return rev
+    return reverse
 }
-
-strrev =  stringReverseUsingStack('Anu')
-
-console.log(strrev);
-
-
-
+console.log(stringReverseUsingStack('Haiiii'));
