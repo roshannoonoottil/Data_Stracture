@@ -8,39 +8,37 @@ class Node{
 class Queue{
     constructor(value){
         const newNode = new Node(value)
-        this.front = newNode
-        this.rear = newNode
+        this.first = newNode
+        this.last = newNode
         this.length = 1
         return this
     }
-
     enqueue(value){
         const newNode = new Node(value)
-        if(!this.front){
-            this.front = newNode
-            this.rear = newNode
+        if(!this.first){
+            this.first = newNode
+            this.last = newNode
         }else{
-            this.rear.next = newNode
-            this.rear = newNode
+            this.last.next  = newNode
+            this.last = newNode
         }
-        this.length++
+        this.length ++
         return this
     }
     dequeue(){
-        if(!this.front)return undefined
-        let temp = this.front
-        if(this.length === 1){
-            this.rear = null
+        if(!this.first) return undefined
+        let temp = this.first
+        if(this.first === 1){
+            this.last = null
         }else{
-            this.front = this.front.next
+            this.first = this.first.next
             temp.next = null
         }
         this.length --
-        return this
+        return temp
     }
-
     display(){
-        let current = this.front
+        let current = this.first
         while(current){
             console.log(current.value);
             current = current.next
@@ -49,8 +47,13 @@ class Queue{
 }
 
 let newQueue = new Queue(1)
-newQueue.enqueue(2)
-newQueue.enqueue(3)
 
-// console.log(newQueue);
+newQueue.enqueue(5)
+newQueue.enqueue(7)
+newQueue.dequeue()
+newQueue.dequeue()
+newQueue.enqueue(9)
+
 newQueue.display()
+
+//console.log(newQueue);
