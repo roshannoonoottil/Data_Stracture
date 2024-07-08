@@ -33,6 +33,21 @@ class BST{
             }
         }
     }
+
+    contains(value){
+        if(this.root === null) return false
+        let temp = this.root
+        while(temp){
+            if(value < temp.value){
+                temp = temp.left
+            }else if(value > temp.value){
+                temp = temp.right
+            }else{
+                return true
+            }
+        }
+        return false
+    }
 }
 
 let myTree = new BST()
@@ -45,6 +60,6 @@ myTree.insert(9)
 myTree.insert(13)
 myTree.insert(5)
 
-
+console.log(myTree.contains(6)); 
 
 console.log(myTree);
