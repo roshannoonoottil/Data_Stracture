@@ -53,13 +53,11 @@ class BST{
 let myTree = new BST()
 
 myTree.insert(10)
-myTree.insert(5)
 myTree.insert(8)
-myTree.insert(2)
-myTree.insert(9)
-myTree.insert(13)
+myTree.insert(15)
 myTree.insert(5)
 
-console.log(myTree.contains(6)); 
+
+//console.log(myTree.contains(6)); 
 
 console.log(myTree);
