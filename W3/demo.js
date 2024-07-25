@@ -1,11 +1,46 @@
-let str = "roshan"
-let nst2 = ""
-let nstr = str[0].toUpperCase()
-for(let i=1;i<str.length-1;i++){
-    nst2 = nst2 + str[i]
+class Node{
+    constructor(value){
+        this.value = value
+        this.left = null
+        this.right = null   
+     }
 }
-let nstr1 = str[str.length-1].toUpperCase()
+class BST{
+    constructor(){
+        this.root = null
+    }
+    isEmpty(){
+        return this.root === null
+    }
+    insert(value){
+        const newNode = new Node(value)
+        if(this.isEmpty()){
+            this.root = newNode
+        }else{
+            this.insetNode(this.root, newNode)
+        }
+    }
+    insetNode(root, newNode){
+        if(newNode.value < root.value){
+            if(!root.left){
+                root.left = newNode
+            }else{
+                this.insetNode(root.left, newNode)
+            }
+        }else{
+           if(!root.right){
+            root.right = newNode
+           }else{
+            this.insetNode(root.right, newNode)
+           }
+        }
+    }
+}
 
+let nBST = new BST()
+nBST.insert(9)
+nBST.insert(6)
+nBST.insert(8)
+nBST.insert(10)
 
-
-console.log(nstr + nst2 + nstr1);
+console.log(nBST);

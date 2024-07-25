@@ -69,6 +69,44 @@ class BST{
             console.log(root.value);
         }
     }
+    min(root){
+        if(!root.left){
+            return root.value
+        }else{
+            return this.min(root.left)
+        }
+    }
+    max(root){
+        if(!root.right){
+            return root.value
+        }else{
+            return this.max(root.right)
+        }
+    }
+    delete(value){
+        this.root = this.deleteNode(this.root, value)
+    }
+    deleteNode(root, value){
+        if(!root) return root
+        if(value < root.value){
+            root.left = this.deleteNode(root.left, value)
+        }else if(value > root.value){
+            root.right = this.deleteNode(root.right, value)
+        }else{
+            if(!root.left && !root.right){
+                return null
+            }
+            if(root.left){
+                return root.right
+            }
+            if(root.right){
+                return root.left
+            }
+            root.value = this.min(root.right)
+            root.right = this.deleteNode(root.right, root.value)
+        }
+        return root
+    }
 }
 
 let newBST = new BST()
@@ -78,7 +116,7 @@ newBST.insert(15)
 newBST.insert(2)
 newBST.insert(7)
 newBST.insert(12)
-newBST.insert(17)
+newBST.delete(5)
 
 console.log(newBST);
-console.log(newBST.search(newBST.root, 6));
+// console.log(newBST.search(newBST.root, 6));
