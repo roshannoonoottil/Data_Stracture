@@ -7,7 +7,7 @@ class Graph {
       if (!this.adjacencyList[vertex]) {
         this.adjacencyList[vertex] = new Set();
       }
-    }
+    }                                                                           
   
     addEdge(vertex1, vertex2) {
       if (!this.adjacencyList[vertex1]) {

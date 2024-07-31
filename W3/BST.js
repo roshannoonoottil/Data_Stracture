@@ -147,17 +147,17 @@ bst.insert(10);
 bst.insert(4);
 bst.insert(16);
 console.log(bst.search(bst.root,16))
-console.log(bst.min(bst.root));
-console.log(bst.max(bst.root));
-console.log("**")
-bst.preOrder(bst.root);
-console.log("**")
-bst.inOrder(bst.root);
-console.log("**")
-bst.postOrder(bst.root)
-console.log("**")
-bst.breadthFS()
-bst.delete(4);
-bst.inOrder(bst.root);
-bst.delete(16);
-bst.inOrder(bst.root);
+// console.log(bst.min(bst.root));
+// console.log(bst.max(bst.root));
+// console.log("**")
+// bst.preOrder(bst.root);
+// console.log("**")
+// bst.inOrder(bst.root);
+// console.log("**")
+// bst.postOrder(bst.root)
+// console.log("**")
+// bst.breadthFS()
+// bst.delete(4);
+// bst.inOrder(bst.root);
+// bst.delete(16);
+// bst.inOrder(bst.root);

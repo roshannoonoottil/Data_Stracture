@@ -48,6 +48,9 @@ class BST{
             }
         }
     }
+
+
+    //DFS
     preOrder(root){
         if(root){
             console.log(root.value);
