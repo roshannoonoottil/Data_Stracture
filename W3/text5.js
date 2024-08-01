@@ -45,6 +45,19 @@ class BST{
     traverse(root)
         return arr
     }
+
+    BSTtoARRAY(root){
+        let arr = []
+        function traverse(root){
+            if(root){
+                traverse(root.left)
+                arr.push(root.value)
+                traverse(root.right)
+            }
+        }
+        traverse(root)
+        return arr
+   }
 }
 
 let bst = new BST()
@@ -54,5 +67,5 @@ bst.insert(4)
 bst.insert(7)
 bst.insert(6)
 
-console.log(bst.inOrder(bst.root));
+console.log(bst.BSTtoARRAY(bst.root));
 

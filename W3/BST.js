@@ -45,8 +45,8 @@ class BST{
         if(root.value==value){
             return true;
         }
-        if(value<root.value){
-            return this.search(root.left,value);
+        if(value<root,value){
+            return this.sarch(root.left,value);
         }else{
             return this.search(root.right,value);
         }
@@ -62,30 +62,7 @@ class BST{
         return this.max(root.right);
     }
     
-    //DFS//
-    preOrder(root){
-        if(root){
-            console.log(root.value);
-            this.preOrder(root.left);
-            this.preOrder(root.right);
-        }
-    }
-    
-    inOrder(root){
-        if(root){
-            this.inOrder(root.left);
-            console.log(root.value);
-            this.inOrder(root.right);
-        }
-    }
-    
-    postOrder(root){
-        if(root){
-            this.postOrder(root.left);
-            this.postOrder(root.right);
-            console.log(root.value)
-        }
-    }
+   
     
     //BFS
     
