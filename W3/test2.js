@@ -119,7 +119,7 @@ newBST.insert(15)
 newBST.insert(2)
 newBST.insert(7)
 newBST.insert(12)
-newBST.delete(5)
+// newBST.delete(5)
 
-console.log(newBST);
+console.log(newBST.preOrder(newBST.root));
 // console.log(newBST.search(newBST.root, 6));

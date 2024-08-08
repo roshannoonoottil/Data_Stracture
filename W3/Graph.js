@@ -104,16 +104,18 @@ class Graph {
   }
   
   const graph = new Graph();
-  graph.addVertex("A");
-  graph.addVertex("B");
-  graph.addVertex("C");
+  // graph.addVertex("A");
+  // graph.addVertex("B");
+  // graph.addVertex("C");
   
   graph.addEdge("A", "B");
   graph.addEdge("B", "C");
+  graph.addEdge("C", "D")
+  // graph.removeVertex("A")
   
   graph.display();
   
-  console.log(graph.hasEdge("A", "C"));
+  // console.log(graph.hasEdge("A", "C"));
   
   console.log(graph.BFS("A"));
   console.log(graph.DFS("A"));

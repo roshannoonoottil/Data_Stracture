@@ -46,7 +46,7 @@ class BST{
             return true;
         }
         if(value<root,value){
-            return this.sarch(root.left,value);
+            return this.search(root.left,value);
         }else{
             return this.search(root.right,value);
         }

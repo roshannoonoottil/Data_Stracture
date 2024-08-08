@@ -21,7 +21,7 @@ class TrieNode {
       node.isEndOfWord = true;
     }
   
-    search(word) {
+    search(word) {  
       let node = this.root;
       for (let char of word) {
         if (!node.children[char]) {
