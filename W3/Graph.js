@@ -62,7 +62,7 @@ class Graph {
   
         if (visited.has(vertex)) {
           continue;
-        }
+        } 
   
         visited.add(vertex);
         result.push(vertex);

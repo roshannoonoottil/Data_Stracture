@@ -9,31 +9,13 @@ class Trie{
         this.root = new TrieNode()
     }
     insert(word){
-        let node = this.root;
+        let node = this.root
         for(let char of word){
             if(!node.childern[char]){
-                node.childern[char] = new TrieNode()
+                node.children[char] = new TrieNode()
             }
-            node = node.childern[char]
+            node = node.children[char]
         }
-        node.isEndOfWord = true
-    }
-    search(word){
-        let node = this.root;
-        for(let char of word){
-            if(!node.childern[char]){
-                return false
-            }
-            node = node.childern[char];
-        }
-        return node.isEndOfWord;
+        node.isEndOfWord= true
     }
 }
-
-let trie = new Trie()
-
-trie.insert("apple")
-trie.insert("app")
-trie.insert("appricot")
-
-console.log(trie);

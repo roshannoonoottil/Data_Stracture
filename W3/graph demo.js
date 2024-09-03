@@ -1,46 +1,47 @@
 class Graph{
     constructor(){
-        this.adjancyList = {}
-    }
-    addVertex(vertex){
-        if(!this.adjancyList[vertex]){
-            this.adjancyList[vertex] = new Set()
+        this.adjacencyList = {}   
+     }
+     addVertex(vertex){
+        if(!this.adjacencyList[vertex]){
+            this.adjacencyList[vertex] = new Set()
         }
-    }
-    addEdge(vertex1,vertex2){
-        if(!this.adjancyList[vertex1]){
-            this.addVertex(vertex1)
+     }
+     addEdge(vertex1,vertex2){
+        if(!this.adjacencyList[vertex1]){
+            this,this.addVertex(vertex1)
         }
-        if(!this.adjancyList[vertex2]){
+        if(!this.adjacencyList[vertex2]){
             this.addVertex(vertex2)
         }
-        this.adjancyList[vertex1].add(vertex2)
-        this.adjancyList[vertex2].add(vertex1)
-    }
-    display(){
-        for(let vertex in this.adjancyList){
-            console.log(vertex + " -> " + [...this.adjancyList[vertex]]);
-            
+        this.adjacencyList[vertex1].add(vertex2)
+        this.adjacencyList[vertex2].add(vertex1)
+     }
+     display(){
+        for(let vertex in this.adjacencyList){
+            console.log(vertex + " -> " + [...this.adjacencyList[vertex]]);
         }
-    }
-    removeEdge(vertex1,vertex2){
-        this.adjancyList[vertex1].delete(vertex2)
-        this.adjancyList[vertex2].delete(vertex1)
-    }
-    removeVertex(vertex){
-        if(!this.adjancyList[vertex]){
-            return;
+     }
+     removeEdge(vertex1,vertex2){
+        this.adjacencyList[vertex1].delete(vertex2)
+        this.adjacencyList[vertex2].delete(vertex1)
+     }
+     removeVertex(vertex){
+        if(!this.adjacencyList[vertex]){
+            return
         }
-        for(let adjancyVertex of this.adjancyList[vertex]){
-            this.removeEdge(vertex,adjancyVertex)
+        for(let adjcencyVertex of this.adjacencyList[vertex]){
+            this.removeEdge(vertex,adjcencyVertex)
         }
-        delete this.adjancyList[vertex]
-    }
+        delete this.adjacencyList[vertex]
+     }
 }
 
-let ngraph = new Graph()
+let newGraph = new Graph()
+newGraph.addEdge("A","B")
+newGraph.addEdge("B","C")
+newGraph.display()
+console.log("+++++++++++++");
 
-ngraph.addEdge("A","B")
-ngraph.addEdge("B","C")
-ngraph.removeVertex("A")
-ngraph.display()
+newGraph.removeVertex("A")
+newGraph.display()

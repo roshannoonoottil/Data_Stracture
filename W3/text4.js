@@ -32,27 +32,6 @@ class BST{
             }
         }
     }
-    preOrder(root){
-        if(root){
-            console.log(root.value);
-            this.preOrder(root.left);
-            this.preOrder(root.right);
-        }
-    }
-    inOrder(root){
-        if(root){
-            this.inOrder(root.left);
-            console.log(root.value);
-            this.inOrder(root.right)
-        }
-    }
-    postOrder(root){
-        if(root){
-            this.postOrder(root.left);
-            this.postOrder(root.right);
-            console.log(root.value);   
-        }
-    }
     min(root){
         if(!root.left){
             return root.value
@@ -60,15 +39,42 @@ class BST{
             return this.min(root.left)
         }
     }
+    max(root){
+        if(!root.right){
+            return root.value
+        }else{
+            return this.max(root.right)
+        }
+    }
+    preOrder(root){
+        if(root){
+            console.log(root.value);
+            this.preOrder(root.left)
+            this.preOrder(root.right)    
+        }
+    }
+    inOrder(root){
+        if(root){
+            this.inOrder(root.left)
+            console.log(root.value);
+            this.inOrder(root.right)  
+        }
+    }
+    postOrder(root){
+        if(root){
+            this.postOrder(root.left)
+            this.postOrder(root.right)
+            console.log(root.value);
+        }
+    }
     delete(value){
         this.root = this.deleteNode(this.root,value)
     }
     deleteNode(root,value){
-        if(!root)return root
+        if(!root)return null
         if(value < root.value){
             root.left = this.deleteNode(root.left,value)
-        }else 
-        if(value > root.value){
+        }else if(value > root.value){
             root.right = this.deleteNode(root.right,value)
         }else{
             if(!root.left && !root.right){
@@ -88,14 +94,11 @@ class BST{
 }
 
 let nbst = new BST()
-nbst.insert(7)
-nbst.insert(9)
-nbst.insert(5)
-nbst.insert(4)
+nbst.insert(8)
 nbst.insert(3)
-
-
+nbst.insert(6)
+nbst.insert(9)
+nbst.insert(10)
+ nbst.delete(6)
 console.log(nbst);
-nbst.delete(9)
-console.log(nbst);
-
+// nbst.inOrder(nbst.root)

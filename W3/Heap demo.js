@@ -35,27 +35,23 @@ class minHeap{
     this.heapiyDown(0)
     return min
  }
- heapiyDown(index){
+heapiyDown(index){
     let smallest = index
     while(true){
-        let leftChildIndex = this.getLeftChildIndex(smallest)
-        let rightChildIndex = this.getRightChildIndex(smallest)
-        if(leftChildIndex < this.heap.length && this.heap[leftChildIndex] < this.heap[smallest]){
-            smallest = leftChildIndex
+        let LeftChildIndex = this.getLeftChildIndex[smallest]
+        let RightChildIndex = this.getRightChildIndex[smallest]
+        if(LeftChildIndex < this.heap.length && this.heap[LeftChildIndex] < this.heap[smallest]){
+            smallest = LeftChildIndex
         }
-        if(rightChildIndex < this.heap.length && this.heap[rightChildIndex] < this.heap[smallest]){
-            smallest = rightChildIndex
+        if(RightChildIndex < this.heap.length && this.heap[RightChildIndex] < this.heap[smallest])
+        {
+            smallest = RightChildIndex
         }
-        if(smallest === index) break;
-        this.swap(index, smallest)
+        if(smallest === index) break
+        this.swap(smallest,index)
         index = smallest
     }
- }
-
-
-
-
-
+}
 }
 
 let minheap = new minHeap()

@@ -45,19 +45,6 @@ class BST{
     traverse(root)
         return arr
     }
-
-    BSTtoARRAY(root){
-        let arr = []
-        function traverse(root){
-            if(root){
-                traverse(root.left)
-                arr.push(root.value)
-                traverse(root.right)
-            }
-        }
-        traverse(root)
-        return arr
-   }
 }
 
 let bst = new BST()

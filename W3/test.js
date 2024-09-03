@@ -82,6 +82,6 @@ bst.insert(10)
 bst.insert(8)
 bst.insert(15)
 bst.insert(5)
-bst.delete(8)
+bst.delete(15)
 // console.log(bst.contains(5));
 console.log(bst);
